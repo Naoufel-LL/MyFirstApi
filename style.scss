@@ -1,0 +1,46 @@
+@import './variables';
+header{
+    width: 100%;
+    height: 100vh;
+    @include centerFlex(row);
+    flex-direction: row;
+    @include ipad{
+        background-color: $primiary-color;
+    }
+    .articles{
+        width: 30%;
+        .article1{
+            color: $primiary-color;
+            p{
+               font-size: $font-small;
+               &:hover{
+                   color: black;
+               }
+            }
+        }
+        .article2{
+            color: $second-color;
+            p{
+                font-size: $font-small;
+                &:hover{
+                    color: black;
+                }
+             }
+        }
+        .article3{
+            color: $third-color;
+            p{
+                font-size: $font-small;
+                &:hover{
+                    color: black;
+                }
+             }
+        }
+        .article4{
+            @extend .article1;
+            color:$last-color;
+        }
+        
+    }
+    
+}
