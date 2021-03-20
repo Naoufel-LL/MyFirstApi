@@ -12,15 +12,6 @@ const courses = [
     {"id":7,"name":"Course8","title":"Sass Tutorial","author":"Naoufel Bahassoune"},
     {"id":8,"name":"Course9","title":"ExpressJS Tutorial","author":"Naoufel Bahassoune"},
 ];
-function validateCourse(course){
-    const Schema =Joi.object({
-        "name" : Joi.string().min(5).required(),
-        "title" : Joi.string().min(10).required(),
-        "author": Joi.string().min(10).required()
-    });
-    return Schema.validate(course,Schema);
-    
-  }
 app.get('/',(req,res)=>{
     res.send('Hello World ❤,This My First Api That I Created After 2 Days of Learning Node.js Express.Js 👨‍💻,Go To /api to see What available in this Api ');
 });
@@ -59,6 +50,6 @@ app.delete('/api/courses/:id',(req,res)=>{
     if (!course) return res.status(404).send('The Course With The Given Id Not Found 404 😥')
     const index = courses.indexOf(course);
     courses.splice(index, 1);
-    res.se/nd(course);
+    res.send(course);
 })
 app.listen(port,()=>{console.log(`Listening on port ${port}`)});
