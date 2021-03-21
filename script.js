@@ -28,12 +28,12 @@ app.get('/api/courses/:id',function (req,res) {
      res.send(course)  
 });
 app.post('/api/courses',function(req,res){
-  const course =[{
+  const course ={
       "id":courses.length +1,
       "name":req.body.name,
       "title":req.body.title,
       "author":req.body.author
-  }]
+  }
     courses.push(course);
     res.json(course);
 })
